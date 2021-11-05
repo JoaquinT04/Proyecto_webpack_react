@@ -1,2 +1,1 @@
-Hola
 # curso-webpack-react
