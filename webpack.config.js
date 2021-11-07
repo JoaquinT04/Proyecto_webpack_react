@@ -1,9 +1,9 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('mini-css-extract-plugin');
-const { TerserPlugin } = require('terser-webpack-plugin');
-const  CleanWebpackPlugin  = require ('clean-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+// const  {CleanWebpackPlugin}  = require ('clean-webpack-plugin');
 
 module.exports = {
 	entry: './src/index.js',
@@ -11,6 +11,7 @@ module.exports = {
 		path: path.resolve(__dirname, 'dist'),
 		filename: 'main.js',
 		publicPath: "./",
+		clean: true,
 	},
 	resolve: {
 		extensions: ['.js', '.jsx'],
@@ -57,7 +58,7 @@ module.exports = {
 			filename: '[name].css'
 		}),
 
-		new CleanWebpackPlugin(),
+		// new CleanWebpackPlugin(),
 	],
 	optimization: {
 		minimize: true,
